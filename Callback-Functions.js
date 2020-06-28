@@ -30,3 +30,19 @@ function mycallback(value) {
 preparedfood(mycallback)
 
 /*****************************************************/
+
+function date(callback) {
+	setTimeout(() => {
+		console.log(new Date().toDateString())
+		let date = new Date()
+		callback(date.getHours(), date.getMinutes(), date.getSeconds() )
+	},2000)
+}
+
+function time(hours, minutes, seconds) {
+	console.log(`time now: ${hours} : ${minutes} : ${seconds}`)
+}
+
+date(time)
+
+/*****************************************************/
