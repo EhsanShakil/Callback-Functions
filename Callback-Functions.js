@@ -46,3 +46,28 @@ function time(hours, minutes, seconds) {
 date(time)
 
 /*****************************************************/
+
+function preparefood(callback) {
+	setTimeout(() => {
+		console.log("Preparing Food")
+		callback("Food is Ready")
+	},2000)
+}
+
+function foodcallback(value) {
+	console.log(`It's Dinner Time ${value}`)
+	dessert(dessertcallback)
+}
+
+function dessert(callback) {
+	setTimeout(() => {
+		console.log("Preparing Dessert")
+		callback("Fruit Cocktail")
+	},5000)
+}
+
+function dessertcallback(item) {
+	console.log(`${item} Dessert is Ready`)
+}
+
+preparefood(foodcallback)
